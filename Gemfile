@@ -64,5 +64,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'rails_12factor' # no se para q, puede q rendimiento
+  gem 'rails_12factor' # Para servir los JS y CSS de manera estatica. Heroku lo neceista.
 end
