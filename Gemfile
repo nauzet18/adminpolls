@@ -9,6 +9,9 @@ gem 'rails', '4.2.0'
 #Use postgres
 gem 'pg' #Driver BD postgress
 
+#Implementa las acciones REST en los controladores.
+gem 'inherited_resources'
+
 #Simple From para la generacion de formularios.
 gem 'simple_form'
 #Paginacion
