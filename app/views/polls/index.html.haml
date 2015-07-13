@@ -2,8 +2,15 @@
 
 %table.table.table-hover
   %th
+    = Poll.human_attribute_name :id
+  %th
+    = Poll.human_attribute_name :name
+  %th
+    = t('actions')
   - collection.each do |c|
     %tr
+      %td
+        = c.id
       %td
         = link_to c.name, edit_resource_path(c)
       %td

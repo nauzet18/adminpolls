@@ -2,13 +2,29 @@
 
 %table.table.table-hover
   %th
+    = Answer.human_attribute_name :id
+  %th
+    = Answer.human_attribute_name :name
+  %th
+    = Answer.human_attribute_name :correct
+  %th
+    = Question.model_name.human
+  %th
+    = t('actions')
   - collection.each do |c|
     %tr
       %td
+        = c.id
+      %td
         = link_to c.name, edit_resource_path(c)
+      %td
+        = c.correct
+      %td
+        = c.question.try(:name)
       %td
         = link_to resource_path(c), method: :delete,  data: { confirm: "Are you sure?" } do
           .glyphicon.glyphicon-trash
+
 
 .row
   .container{align: "right"}

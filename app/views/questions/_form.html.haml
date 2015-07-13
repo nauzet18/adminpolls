@@ -1,5 +1,22 @@
 = simple_form_for resource do |f|
   = f.input :name
+  = f.association :group, collection: Group.all.order(:name), prompt: "Choose one"
+
+  %h1= Answer.model_name.human.pluralize
+  %table
+    %thead
+      %th= Answer.human_attribute_name :id
+      %th= Answer.human_attribute_name :name
+      %th= Answer.human_attribute_name :correct
+    %tbody
+    = f.simple_fields_for :answers do |g|
+      %tr
+        %td
+          = g.object.try(:id)
+        %td
+          = link_to g.object.try(:name), edit_answer_path(g.object)        
+        %td
+          = g.object.try(:correct)
 
   %button.btn.btn-default
     %i.fa.fa-times-circle

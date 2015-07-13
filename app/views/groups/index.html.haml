@@ -2,10 +2,21 @@
 
 %table.table.table-hover
   %th
+    = Group.human_attribute_name :id
+  %th
+    = Group.human_attribute_name :name
+  %th
+    = Poll.model_name.human
+  %th
+    = t('actions')
   - collection.each do |c|
     %tr
       %td
+        = c.id
+      %td
         = link_to c.name, edit_resource_path(c)
+      %td
+        = c.poll.try(:name)
       %td
         = link_to resource_path(c), method: :delete,  data: { confirm: "Are you sure?" } do
           .glyphicon.glyphicon-trash
