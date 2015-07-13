@@ -1,8 +1,7 @@
 = simple_form_for resource do |f|
   = f.input :name
 
-
-  = link_to groups_path, class: "btn.btn-default" do
+  %button.btn.btn-default
     %i.fa.fa-times-circle
       = t( :close ) 
 
