@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :questions, except: :show
   resources :answers, except: :show
 
-
   root to: "polls#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
