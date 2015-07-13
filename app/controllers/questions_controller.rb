@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class QuestionsController < InheritedResources::Base
   def create
     create! do |success, failure|
 

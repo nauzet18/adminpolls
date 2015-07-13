@@ -1,4 +1,4 @@
-class GroupsController < ApplicationController
+class GroupsController < InheritedResources::Base
   def create
     create! do |success, failure|
 

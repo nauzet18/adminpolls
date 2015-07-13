@@ -1,4 +1,4 @@
-class PollsController < ApplicationController
+class PollsController < InheritedResources::Base
   def create
     create! do |success, failure|
 
