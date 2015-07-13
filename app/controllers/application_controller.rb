@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
 
   inherit_resources
 
+  def collection
+    @contents = end_of_association_chain.order(:name)
+  end
+
 end
