@@ -1,2 +1,15 @@
-%h1 Polls#index
-%p Find me in app/views/polls/index.html.haml
+- content_for :title, Poll.model_name.human.pluralize
+
+%table.table.table-hover
+  %th
+  - collection.each do |c|
+    %tr
+      %td
+        = link_to c.name, edit_resource_path(c)
+      %td
+        = link_to resource_path(c), method: :delete,  data: { confirm: "Are you sure?" } do
+          .glyphicon.glyphicon-trash
+
+.row
+  .container{align: "right"}
+    = link_to t(:new, scope: 'simple_form.actions'), new_resource_path, :class => 'btn btn-primary button'
