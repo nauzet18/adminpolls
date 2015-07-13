@@ -22,6 +22,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:name)
+    params.require(:question).permit(:name, :group_id)
   end
 end
