@@ -3,4 +3,6 @@ class Group < ActiveRecord::Base
   belongs_to :poll
 
   validates :name, :poll, presence: true
+
+  accepts_nested_attributes_for :questions
 end

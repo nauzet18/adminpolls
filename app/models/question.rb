@@ -3,4 +3,6 @@ class Question < ActiveRecord::Base
   belongs_to :group
 
   validates :name, :group, presence: true
+
+  accepts_nested_attributes_for :answers
 end
