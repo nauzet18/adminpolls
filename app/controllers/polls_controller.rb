@@ -19,6 +19,14 @@ class PollsController < ApplicationController
     end
   end
 
+  def generate_json
+    #Un ejemplo de llamadas son:
+    #http://localhost:3000/poll_generate_json/4.json
+    
+    @poll = Poll.find_by_id( params[:id] )
+
+  end
+
   private
 
   def poll_params

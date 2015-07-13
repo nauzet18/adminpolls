@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   root to: "polls#index"
 
+  
+  get 'poll_generate_json/:id' => 'polls#generate_json'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
