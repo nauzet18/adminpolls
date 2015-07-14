@@ -4,5 +4,5 @@ class Group < ActiveRecord::Base
 
   validates :name, :poll, presence: true
 
-  accepts_nested_attributes_for :questions
+  accepts_nested_attributes_for :questions, :reject_if => :all_blank, :allow_destroy => true
 end

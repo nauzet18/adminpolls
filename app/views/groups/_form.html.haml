@@ -4,16 +4,13 @@
   = f.association :poll, collection: Poll.all.order(:name), prompt: "Choose one"
 
   %h1= Question.model_name.human.pluralize
-  %table.table.table-hover.table-striped
-    %thead
-      %th= Question.human_attribute_name :id
-      %th= Question.human_attribute_name :name
-    %tbody
-    = f.simple_fields_for :questions do |g|
-      %tr
-        %td
-          = g.object.try(:id)
-        %td
-          = link_to g.object.try(:name), edit_question_path(g.object)        
+
+  = f.simple_fields_for :questions do |g|
+    = render 'question_fields', :f => g
+
+  .clearfix
+    = link_to_add_association f, :questions, :class => 'btn btn-primary' do
+      .glyphicon.glyphicon-plus
+  .clearfix
 
   = render :partial => "shared/botton_form", :locals => { f: f, path: groups_path }

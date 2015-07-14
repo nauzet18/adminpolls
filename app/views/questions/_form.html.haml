@@ -3,19 +3,14 @@
   = f.association :group, collection: Group.all.order(:name), prompt: "Choose one"
 
   %h1= Answer.model_name.human.pluralize
-  %table.table.table-hover.table-striped
-    %thead
-      %th= Answer.human_attribute_name :id
-      %th= Answer.human_attribute_name :name
-      %th= Answer.human_attribute_name :correct
-    %tbody
-    = f.simple_fields_for :answers do |g|
-      %tr
-        %td
-          = g.object.try(:id)
-        %td
-          = link_to g.object.try(:name), edit_answer_path(g.object)        
-        %td
-          = g.object.try(:correct)
+
+  = f.simple_fields_for :answers do |g|
+
+    = render 'answer_fields', :f => g
+
+  .clearfix
+    = link_to_add_association f, :answers, :class => 'btn btn-primary' do
+      .glyphicon.glyphicon-plus
+  .clearfix
 
   = render :partial => "shared/botton_form", :locals => { f: f, path: questions_path }

@@ -34,6 +34,6 @@ class PollsController < InheritedResources::Base
   end
 
   def poll_params
-    params.require(:poll).permit(:name, :description)
+    params.require(:poll).permit(:name, :description, groups_attributes: [:id, :name, :_destroy])
   end
 end

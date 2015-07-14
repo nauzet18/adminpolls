@@ -16,6 +16,8 @@ gem 'inherited_resources'
 gem 'simple_form'
 #Paginacion
 gem 'kaminari'
+#crear formularios anidados
+gem 'cocoon'
 
 # Use Haml
 gem 'haml-rails'

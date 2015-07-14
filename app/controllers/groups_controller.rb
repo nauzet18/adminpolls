@@ -26,6 +26,6 @@ class GroupsController < InheritedResources::Base
   end
 
   def group_params
-    params.require(:group).permit(:name, :poll_id)
+    params.require(:group).permit(:name, :poll_id, questions_attributes: [:id, :name, :_destroy])
   end
 end

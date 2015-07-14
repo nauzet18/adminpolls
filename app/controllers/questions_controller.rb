@@ -26,6 +26,6 @@ class QuestionsController < InheritedResources::Base
   end
 
   def question_params
-    params.require(:question).permit(:name, :group_id)
+    params.require(:question).permit(:name, :group_id, answers_attributes: [:id, :name, :correct, :_destroy])
   end
 end

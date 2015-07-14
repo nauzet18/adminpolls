@@ -4,5 +4,5 @@ class Question < ActiveRecord::Base
 
   validates :name, :group, presence: true
 
-  accepts_nested_attributes_for :answers
+  accepts_nested_attributes_for :answers, :reject_if => :all_blank, :allow_destroy => true
 end
