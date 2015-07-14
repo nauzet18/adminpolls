@@ -29,6 +29,10 @@ class PollsController < InheritedResources::Base
 
   private
 
+  def collection
+    @contents = end_of_association_chain.order(:id).page( params[:page] )
+  end
+
   def poll_params
     params.require(:poll).permit(:name, :description)
   end

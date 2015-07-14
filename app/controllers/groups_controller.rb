@@ -21,6 +21,10 @@ class GroupsController < InheritedResources::Base
 
   private
 
+  def collection
+    @contents = end_of_association_chain.order(:id).page( params[:page] )
+  end
+
   def group_params
     params.require(:group).permit(:name, :poll_id)
   end

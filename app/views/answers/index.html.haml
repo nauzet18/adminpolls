@@ -25,6 +25,7 @@
         = link_to resource_path(c), method: :delete,  data: { confirm: "Are you sure?" } do
           .glyphicon.glyphicon-trash
 
+= paginate collection
 
 .row
   .container{align: "right"}

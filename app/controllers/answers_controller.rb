@@ -21,6 +21,10 @@ class AnswersController < InheritedResources::Base
 
   private
 
+  def collection
+    @contents = end_of_association_chain.order(:id).page( params[:page] )
+  end
+
   def answer_params
     params.require(:answer).permit(:name, :correct, :question_id)
   end

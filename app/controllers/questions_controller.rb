@@ -21,6 +21,10 @@ class QuestionsController < InheritedResources::Base
   
   private
 
+  def collection
+    @contents = end_of_association_chain.order(:id).page( params[:page] )
+  end
+
   def question_params
     params.require(:question).permit(:name, :group_id)
   end
