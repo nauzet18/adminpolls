@@ -1,5 +1,4 @@
 .form-group{align: "right"}
-  %button.btn.btn-danger      
-    = t( :close )
+  = link_to t( :close ), path, class: "btn btn-danger"
 
-  = f.submit t( :save ) , class: "btn btn-success" 
+  = f.submit t( :save ) , class: "btn btn-success"

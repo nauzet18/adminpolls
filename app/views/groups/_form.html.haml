@@ -16,4 +16,4 @@
         %td
           = link_to g.object.try(:name), edit_question_path(g.object)        
 
-  = render :partial => "shared/botton_form", :locals => { f: f }
+  = render :partial => "shared/botton_form", :locals => { f: f, path: groups_path }
