@@ -1,15 +1,15 @@
 %nav.navbar.navbar-inverse
   .container
     .navbar-header
-      =link_to t('Administrator Polls'), polls_path, class: "navbar-brand"
+      =link_to t('title'), polls_path, class: "navbar-brand"
 
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
-        %li{:class => active_menu?(root_path)}
-          =link_to t('.Polls'), polls_path
+        %li{:class => active_menu?(polls_path)}
+          =link_to Poll.model_name.human.pluralize, polls_path
         %li{:class => active_menu?(groups_path)}
-          =link_to t('.Groups'), groups_path
+          =link_to Group.model_name.human.pluralize, groups_path
         %li{:class => active_menu?(questions_path)}
-          =link_to t('.Questions'), questions_path
+          =link_to Question.model_name.human.pluralize, questions_path
         %li{:class => active_menu?(answers_path)}
-          =link_to t('.Answers'), answers_path
+          =link_to Answer.model_name.human.pluralize, answers_path

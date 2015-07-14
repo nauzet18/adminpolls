@@ -1,6 +1,6 @@
 - content_for :title, Question.model_name.human.pluralize
 
-%table.table.table-hover
+%table.table.table-hover.table-striped
   %th
     = Question.human_attribute_name :id
   %th
@@ -24,4 +24,4 @@
 
 .row
   .container{align: "right"}
-    = link_to t(:new, scope: 'simple_form.actions'), new_resource_path, :class => 'btn btn-primary button'
+    = link_to t(:new), new_resource_path, :class => 'btn btn-primary button'

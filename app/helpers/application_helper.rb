@@ -1,6 +1,7 @@
 module ApplicationHelper
   def active_menu? ( link)
-    if current_page?(link)
+
+    if request.url.include?(link)
       'active ' 
     else
       ''

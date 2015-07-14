@@ -1,9 +1,9 @@
-= simple_form_for resource do |f|
+= simple_form_for resource, defaults: { wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control '}} do |f|
   = f.input :name
   = f.association :group, collection: Group.all.order(:name), prompt: "Choose one"
 
   %h1= Answer.model_name.human.pluralize
-  %table
+  %table.table.table-hover.table-striped
     %thead
       %th= Answer.human_attribute_name :id
       %th= Answer.human_attribute_name :name
@@ -18,10 +18,4 @@
         %td
           = g.object.try(:correct)
 
-  %button.btn.btn-default
-    %i.fa.fa-times-circle
-      = t( :close ) 
-
-  = f.button :submit , class: "btn btn-default" do 
-    %i.fa.fa-check-circle
-      = t( :save )
+  = render :partial => "shared/botton_form", :locals => { f: f }

@@ -11,11 +11,13 @@
     = render "layouts/menu"
 
     .container
-      .starter-template
-        %h1= yield :title
+      .row
+        .col-md-12
+          .starter-template
+            %h1= yield :title
 
-        = render "layouts/errors"
+            = render "layouts/errors"
 
-        = yield
+            = yield
 
     = render "layouts/footer"
