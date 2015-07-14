@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :polls, except: :show
   resources :groups, except: :show
   resources :questions, except: :show

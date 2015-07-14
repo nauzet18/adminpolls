@@ -19,6 +19,9 @@ gem 'kaminari'
 #crear formularios anidados
 gem 'cocoon'
 
+#Gema para autentificar
+gem 'devise'
+
 # Use Haml
 gem 'haml-rails'
 # Use SCSS for stylesheets
