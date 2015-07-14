@@ -1,0 +1,55 @@
+es:
+  'are_you_sure?': "¿Está ud. seguro?"
+  dates: "Fechas"
+  help: "Ayuda"
+  home: "Inicio"
+  copy_right: "Copy Right by MisoTIC"
+
+  "title": "Administrador de encuestas"
+  wellcome: "Bienvenidos"
+  calendar: "Calendario"
+  select_file_type: "Seleccionar tipo de fichero"
+  without_alerts: "Sin alertas"
+  destroyed_successful: "Eliminado con exito"
+
+  active: "activa"
+  inactive: "inactiva"
+  logout: "Cerrar sesión"
+  saved: "Guardado"
+
+
+  actions: "Acciones"
+  new: "Nuevo"
+  edit: "Editar"
+  delete: "Eliminar"
+  destroy: "Borrar"
+  save: "Guardar"
+  close: "Cerrar"
+  search: "Buscar"
+  clear: "Limpiar"
+
+
+  contents:
+    index:
+      images: "Imagenes"
+      videos: "Videos"
+      applications: "Aplicaciones"
+      delete_aplicaction: "Eliminar aplicación"
+      link_aplication:  "Enlazar aplicación"
+      upload_aplication: "Subir aplicación"
+      upload_image: "Subir imagen"
+      upload_video: "Subir video"
+      no_data: "No hay elementos"
+    types:
+      image: "Imagen"
+      video: "Video"
+      iframe: "Web"
+
+
+  views:
+    pagination:
+      first: "Primero"
+      last: "Último"
+      previous: "Anterior"
+      next: "Siguiente"
+      truncate: "&hellip;"

@@ -1,0 +1,52 @@
+en:
+  'are_you_sure?': "Are_you_sure?"
+  dates: "Dates"
+  help: "Help"
+  home: "Home"
+  copy_right: "Copy Right by MisoTIC"
+
+  "title": "Administrator Polls"
+  wellcome: "Wellcome"
+  without_alerts: "Without alerts"
+  destroyed_successful: "destroyed successful"
+
+  active: "active"
+  inactive: "inactive"
+  logout: "Logout"
+  saved: "Saved"
+
+  actions: "Actions"
+  new: "New"
+  edit: "Edit"
+  delete: "Delete"
+  destroy: "Destroy"
+  save: "Save"
+  close: "Close"
+  search: "Search"
+  clear: "Clear"
+
+
+  contents:
+    index:
+      images: "Imagenes"
+      videos: "Videos"
+      applications: "Aplicaciones"
+      delete_aplicaction: "Eliminar aplicación"
+      link_aplication:  "Enlazar aplicación"
+      upload_aplication: "Subir aplicación"
+      upload_image: "Subir imagen"
+      upload_video: "Subir video"
+      no_data: "No hay elementos"
+    types:
+      image: "Imagen"
+      video: "Video"
+      iframe: "Web"
+
+
+  views:
+    pagination:
+      first: "Primero"
+      last: "Último"
+      previous: "Anterior"
+      next: "Siguiente"
+      truncate: "&hellip;"
