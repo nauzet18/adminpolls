@@ -13,3 +13,10 @@
           =link_to Question.model_name.human.pluralize, questions_path
         %li{:class => active_menu?(answers_path)}
           =link_to Answer.model_name.human.pluralize, answers_path
+
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to destroy_user_session_path, :method => :delete  do
+            %i.fa.fa-power-off
+            %span.text
+              = t('logout')
