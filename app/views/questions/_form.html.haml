@@ -1,4 +1,4 @@
-= simple_form_for resource, defaults: { wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control '}} do |f|
+= simple_form_for resource, url: {page: params[:page]}, defaults: { wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control '}} do |f|
   = f.input :name
   = f.association :group, collection: Group.all.order(:name), prompt: "Choose one"
 
@@ -14,3 +14,5 @@
   .clearfix
 
   = render :partial => "shared/botton_form", :locals => { f: f, path: questions_path }
+
+  %input{:name => "page", :type => "hidden", :value => "#{params[:page]}"}

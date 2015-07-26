@@ -16,7 +16,7 @@
       %td
         = c.id
       %td
-        = link_to c.name, edit_resource_path(c)
+        = link_to c.name, edit_resource_path(c, page: params[:page])
       %td
         = c.group.try(:name)
       %td
