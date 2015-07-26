@@ -4,7 +4,7 @@
 
   %h1= Answer.model_name.human.pluralize
 
-  = f.simple_fields_for :answers do |g|
+  = f.simple_fields_for :answers, resource.answers.order(id: :asc) do |g|
 
     = render 'answer_fields', :f => g
 
