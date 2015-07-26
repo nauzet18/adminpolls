@@ -17,6 +17,7 @@ es:
   logout: "Cerrar sesión"
   saved: "Guardado"
 
+  find_by_name: "Buscar por nombre"
 
   actions: "Acciones"
   new: "Nuevo"

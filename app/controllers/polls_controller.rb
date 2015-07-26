@@ -30,7 +30,11 @@ class PollsController < InheritedResources::Base
   private
 
   def collection
-    @contents = end_of_association_chain.order(:id).page( params[:page] )
+    if params[:search_text] and params[:search_text].size > 0
+      @contents = end_of_association_chain.where("name ilike ?", "%#{params[:search_text]}%").order(:id).page( params[:page] )
+    else
+      @contents = end_of_association_chain.order(:id).page( params[:page] )
+    end
   end
 
   def poll_params

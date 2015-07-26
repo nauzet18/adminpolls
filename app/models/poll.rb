@@ -1,5 +1,5 @@
 class Poll < ActiveRecord::Base
-  has_many :groups, :dependent => :destroy
+  has_many :groups, :dependent => :destroy, inverse_of: :poll
 
   validates :name, presence: true
 

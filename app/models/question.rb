@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  has_many :answers, :dependent => :destroy
+  has_many :answers, :dependent => :destroy, inverse_of: :question
   belongs_to :group
 
   validates :name, :group, presence: true

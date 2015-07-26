@@ -1,5 +1,5 @@
 class Group < ActiveRecord::Base
-  has_many :questions, :dependent => :destroy
+  has_many :questions, :dependent => :destroy, inverse_of: :group
   belongs_to :poll
 
   validates :name, :poll, presence: true

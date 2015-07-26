@@ -1,5 +1,7 @@
 - content_for :title, Group.model_name.human.pluralize
 
+= render :partial => "shared/search", :locals => { :controller_filter => controller.controller_name, :action_filter => 'index', options: Poll.all.order(:name).collect{ |u| [u.name, u.id] } }
+
 %table.table.table-hover.table-striped
   %th
     = Group.human_attribute_name :id
