@@ -5,7 +5,7 @@
 
   %h1= Question.model_name.human.pluralize
 
-  = f.simple_fields_for :questions do |g|
+  = f.simple_fields_for :questions, resource.questions.order(id: :asc) do |g|
     = render 'question_fields', :f => g
 
   .clearfix

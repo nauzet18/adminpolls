@@ -5,7 +5,7 @@
 
   %h1= Group.model_name.human.pluralize
 
-  = f.simple_fields_for :groups do |g|
+  = f.simple_fields_for :groups, resource.groups.order(id: :asc) do |g|
     = render 'group_fields', :f => g
 
   .clearfix
