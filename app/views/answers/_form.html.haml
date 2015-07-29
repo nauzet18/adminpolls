@@ -4,5 +4,4 @@
   
   = f.association :question, collection: Question.all.order(:name), prompt: "Choose one"
 
-  = render :partial => "shared/botton_form", :locals => { f: f, path: answers_path }
-  
+  = render :partial => "shared/botton_form", :locals => { f: f, path: answers_path(page: params[:page], search_select: params[:search_select], search_text: params[:search_text]) }

@@ -26,7 +26,7 @@ class PollsController < InheritedResources::Base
 
   def collection
     @contents =
-      if param_sizes(search_text: :nonzero?)
+      if param_sizes(search_text: :present?)
         end_of_association_chain
           .where("name ilike ?", "%#{params[:search_text]}%")
       else

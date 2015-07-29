@@ -13,4 +13,4 @@
       .glyphicon.glyphicon-plus
   .clearfix
 
-  = render :partial => "shared/botton_form", :locals => { f: f, path: groups_path }
+  = render :partial => "shared/botton_form", :locals => { f: f, path: groups_path(page: params[:page], search_select: params[:search_select], search_text: params[:search_text]) }

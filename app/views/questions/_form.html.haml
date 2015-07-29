@@ -13,6 +13,6 @@
       .glyphicon.glyphicon-plus
   .clearfix
 
-  = render :partial => "shared/botton_form", :locals => { f: f, path: questions_path }
+  = render :partial => "shared/botton_form", :locals => { f: f, path: questions_path(page: params[:page], search_select: params[:search_select], search_text: params[:search_text]) }
 
   %input{:name => "page", :type => "hidden", :value => "#{params[:page]}"}
