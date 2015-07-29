@@ -2,7 +2,7 @@ class QuestionsController < InheritedResources::Base
   def create
     create! do |success, _failure|
       success.html do
-        redirect_to questions_path, notice: I18n.t(:saved)
+        redirect_to questions_path(page: params[:page]), notice: I18n.t(:saved)
       end
     end
   end
@@ -10,7 +10,7 @@ class QuestionsController < InheritedResources::Base
   def update
     update! do |success, _failure|
       success.html do
-        redirect_to questions_path, notice: I18n.t(:saved)
+        redirect_to questions_path(page: params[:page]), notice: I18n.t(:saved)
       end
     end
   end
@@ -33,20 +33,7 @@ class QuestionsController < InheritedResources::Base
       end.order(:id).page( params[:page])
   end
 
-  def param_sizes(**fields)
-    fields.map do |key, proc|
-      params[key].try(proc)
-    end.all?
-  end
-
   def question_params
-    params.require(:question).permit(
-      :page,
-      :name,
-      :group_id,
-      answers_attributes: %i{id name correct _destroy}
-    ).tap do |whitelisted|
-      whitelisted[:page] = params[:page]
-    end
+    params.require(:question).permit(:name, :group_id, answers_attributes: [:id, :name, :correct, :_destroy])
   end
 end

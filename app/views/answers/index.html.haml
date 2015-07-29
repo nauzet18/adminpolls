@@ -18,7 +18,7 @@
       %td
         = c.id
       %td
-        = link_to c.name, edit_resource_path(c)
+        = link_to c.name, edit_resource_path(c, page: params[:page])
       %td
         = c.correct
       %td
@@ -31,4 +31,4 @@
 
 .row
   .container{align: "right"}
-    = link_to t(:new), new_resource_path, :class => 'btn btn-primary button'
+    = link_to t(:new), new_resource_path(page: params[:page]), :class => 'btn btn-primary button'
