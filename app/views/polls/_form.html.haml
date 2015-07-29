@@ -1,7 +1,7 @@
 = simple_form_for resource, defaults: { wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control '}} do |f|
 
   = f.input :name
-  = f.input :description, input_html: {  rows: 5 }
+  = f.input :description, input_html: { rows: 5 }
 
   %h1= Group.model_name.human.pluralize
 
@@ -13,5 +13,4 @@
       .glyphicon.glyphicon-plus
   .clearfix
 
-  = render :partial => "shared/botton_form", :locals => { f: f, path: polls_path }
-
+  = render :partial => "shared/botton_form", :locals => { f: f, path: polls_path(page: params[:page], search_select: params[:search_select], search_text: params[:search_text]) }
