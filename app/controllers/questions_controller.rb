@@ -25,7 +25,7 @@ class QuestionsController < InheritedResources::Base
       elsif param_sizes(search_text: :zero?, search_select: :nonzero?)
         end_of_association_chain
           .where("group_id = ?", params[:search_select].to_i)
-      elsif params(search_text: :nonzero?, search_select: :zero?)
+      elsif param_sizes(search_text: :nonzero?, search_select: :zero?)
         end_of_association_chain
           .where("name ilike ?", "%#{params[:search_text]}%")
       else
