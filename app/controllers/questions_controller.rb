@@ -33,8 +33,8 @@ class QuestionsController < InheritedResources::Base
       end.order(:id).page( params[:page])
   end
 
-  def param_sizes(**params)
-    params.map do |key, proc|
+  def param_sizes(**fields)
+    fields.map do |key, proc|
       params[key].try(proc)
     end.all?
   end
