@@ -1,7 +1,7 @@
 = simple_form_for resource, defaults: { wrapper_html: {class: 'form-group'}, input_html: {class: 'form-control '}} do |f|
 
   = f.input :name
-  = f.input :description, input_html: {  rows: 5 }
+  = f.input :description, input_html: { rows: 5 }
   = hidden_field_tag :page, params[:page]
 
   %h1= Group.model_name.human.pluralize
@@ -15,4 +15,3 @@
   .clearfix
 
   = render :partial => "shared/botton_form", :locals => { f: f, path: polls_path }
-
