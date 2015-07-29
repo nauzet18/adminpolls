@@ -36,9 +36,7 @@ class QuestionsController < InheritedResources::Base
   end
 
   def question_params
-    debugger
     params.require(:question).permit(:page, :name, :group_id, answers_attributes: [:id, :name, :correct, :_destroy]).tap do |whitelisted|
-      debugger
       whitelisted[:page] = params[:page]
     end
   end

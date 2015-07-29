@@ -13,7 +13,7 @@ class PollsController < InheritedResources::Base
     update! do |success, failure|
 
       success.html do
-        redirect_to polls_path, notice: I18n.t( :saved )
+        redirect_to polls_path(page: params[:page]), notice: I18n.t( :saved )
       end
 
     end
