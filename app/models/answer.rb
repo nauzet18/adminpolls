@@ -1,6 +1,8 @@
 class Answer < ActiveRecord::Base
   belongs_to :question
 
+  default_scope { order('id') }
+
   validates :name, :question, presence: true
   #El campo correct no tiene por que estar presente al guardarlo. 
   #En la BD tiene un valor por defecto a false y si se implementa con un input checkbox, 
